@@ -7,7 +7,7 @@ Feature: Create user
     """
       {
         "id": 0,
-        "username": "Riverapj",
+        "username": "Riverapjj",
         "firstName": "Josue",
         "lastName": "Rivera",
         "email": "josue@gmail.com",
@@ -24,3 +24,11 @@ Feature: Create user
     When method POST
     Then status 200
 
+    * print 'username created: ', user.username
+
+  Scenario: Find user by username
+
+    Given path '/user/', user.username
+    When method GET
+    Then status 200
+    And match response.username == user.username
