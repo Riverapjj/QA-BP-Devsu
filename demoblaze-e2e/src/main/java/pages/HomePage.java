@@ -11,10 +11,12 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
+    //Function to select products by name
     public void selectProduct(String productName) {
         wait.until(ExpectedConditions.elementToBeClickable(By.linkText(productName))).click();
     }
 
+    //Function to click cart element
     public void clickCart() {
         wait.until(ExpectedConditions.elementToBeClickable(By.id("cartur"))).click();
     }

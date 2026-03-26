@@ -10,10 +10,12 @@ public class CartPage extends BasePage {
         super(driver);
     }
 
+    //Function to validate a product has been added to cart
     public boolean isProductInCart(String productName) {
         return wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("tbodyid"), productName));
     }
 
+    //Function to click place order button
     public void clickPlaceOrder() {
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".btn-success"))).click();
     }
